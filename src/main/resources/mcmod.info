@@ -1,0 +1,16 @@
+[
+{
+  "modid": "practice",
+  "name": "Practice Mod",
+  "description": "A mod for practicing coding and team work",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["MDCTeam"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
