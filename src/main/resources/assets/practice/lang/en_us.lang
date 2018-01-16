@@ -1,0 +1,9 @@
+#-PARSE_ESCAPES
+#(this command allows for proper evaluations as defined by String.format(), not a simplified version) -> seems to somewhat break use of `:`
+
+#Items
+item.practice:awesomium_ingot.name=Awesomium Ingot
+
+#Div
+practice.awesomium.message=I think %s is awesome. Do you think so too?
+item_group.practice=Practice Tab

@@ -68,7 +68,6 @@ processResources {
     }
 }
 
-
 task sourceJar(type: Jar, dependsOn: "sourceMainJava", overwrite: true) {
     from "build/sources/main/java"
     classifier = 'sources'
@@ -100,4 +99,3 @@ compileKotlin {
         jvmTarget = 1.8
     }
 }
-

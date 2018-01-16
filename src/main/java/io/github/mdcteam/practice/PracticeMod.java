@@ -1,5 +1,6 @@
 package io.github.mdcteam.practice;
 
+import io.github.mdcteam.practice.kotlin.KSetup;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -16,6 +17,7 @@ public class PracticeMod
     @EventHandler
     public static void preInit(FMLPreInitializationEvent e) {
         System.out.println("ITS DA PRACTICE MOD");
+        KSetup.INSTANCE.preInit(e);
     }
 
     @EventHandler
