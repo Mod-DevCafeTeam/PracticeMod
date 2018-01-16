@@ -17,10 +17,10 @@ public class ArmorBase {
 
     protected HashMap<EntityEquipmentSlot, Item> armorPieces = new HashMap<>();
 
-    public ArmorBase(ResourceLocation name, int durability, int[] reductionAmounts, int enchantability, float toughness, SoundEvent equipSound, boolean...enabledArmorPieces) {
+    public ArmorBase(ResourceLocation name, int durability, int[] reductionAmounts, int enchantability, float toughness, SoundEvent equipSound, boolean... enabledArmorPieces) {
         this(name,
                 EnumHelper.addArmorMaterial(
-                        name.toString()+"_material",
+                        name.toString() + "_material",
                         name.toString(),
                         durability,
                         reductionAmounts,
@@ -30,11 +30,11 @@ public class ArmorBase {
                 enabledArmorPieces);
     }
 
-    public ArmorBase(ResourceLocation name, ItemArmor.ArmorMaterial material, boolean...enabledArmorPieces) {
+    public ArmorBase(ResourceLocation name, ItemArmor.ArmorMaterial material, boolean... enabledArmorPieces) {
         this.name = name;
         this.material = material;
 
-        for (int i = 0; i<enabledArmorPieces.length; i++) {
+        for (int i = 0; i < enabledArmorPieces.length; i++) {
             if (enabledArmorPieces[i]) {
                 EntityEquipmentSlot slot = EntityEquipmentSlot.HEAD;
 
@@ -52,7 +52,7 @@ public class ArmorBase {
                         slot = EntityEquipmentSlot.FEET;
                         break;
                 }
-                armorPieces.put(slot, ModItems.registerItem(getItemArmorInstanceFromSlot(slot), name.getResourcePath()+"_"+getNameFromSlot(slot)));
+                armorPieces.put(slot, ModItems.registerItem(getItemArmorInstanceFromSlot(slot), name.getResourcePath() + "_" + getNameFromSlot(slot)));
             }
         }
     }
@@ -91,7 +91,7 @@ public class ArmorBase {
     public void replaceArmorPiece(EntityEquipmentSlot slot, ItemArmor newPiece) {
         ModItems.MOD_ITEMS.remove(armorPieces.get(slot));
         armorPieces.remove(slot);
-        armorPieces.put(slot, ModItems.registerItem(newPiece, name.getResourcePath()+"_"+getNameFromSlot(slot)));
+        armorPieces.put(slot, ModItems.registerItem(newPiece, name.getResourcePath() + "_" + getNameFromSlot(slot)));
     }
 
     public class Helmet extends ItemArmor {
@@ -99,16 +99,19 @@ public class ArmorBase {
             super(material, 0, EntityEquipmentSlot.HEAD);
         }
     }
+
     public class Chestplate extends ItemArmor {
         public Chestplate() {
             super(material, 0, EntityEquipmentSlot.CHEST);
         }
     }
+
     public class Leggings extends ItemArmor {
         public Leggings() {
             super(material, 1, EntityEquipmentSlot.LEGS);
         }
     }
+
     public class Boots extends ItemArmor {
         public Boots() {
             super(material, 0, EntityEquipmentSlot.FEET);

@@ -6,6 +6,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class PracticeArmor extends ArmorBase {
     public PracticeArmor() {
-        super(new ResourceLocation(PracticeMod.MOD_ID,"practiceArmor"), ItemArmor.ArmorMaterial.IRON, true, true, true, true);
+        super(new ResourceLocation(PracticeMod.MOD_ID, "practiceArmor"), ItemArmor.ArmorMaterial.IRON, true, true, true, true);
     }
 }

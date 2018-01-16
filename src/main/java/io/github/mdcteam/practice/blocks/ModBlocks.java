@@ -4,7 +4,6 @@ import io.github.mdcteam.practice.PracticeMod;
 import io.github.mdcteam.practice.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,8 +24,8 @@ public class ModBlocks {
 
     public static Block registerBlock(Block block, String name) {
         MOD_BLOCKS.put(name, block);
-        block.setRegistryName(PracticeMod.MOD_ID+":"+name);
-        block.setUnlocalizedName(PracticeMod.MOD_ID+"."+name);
+        block.setRegistryName(PracticeMod.MOD_ID + ":" + name);
+        block.setUnlocalizedName(PracticeMod.MOD_ID + "." + name);
 
         ModItems.registerItem(new ItemBlock(block), name);
 

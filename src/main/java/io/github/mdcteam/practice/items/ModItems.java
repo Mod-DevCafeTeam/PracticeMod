@@ -24,8 +24,8 @@ public class ModItems {
 
     public static Item registerItem(Item item, String name) {
         MOD_ITEMS.put(name, item);
-        item.setRegistryName(PracticeMod.MOD_ID+":"+name);
-        item.setUnlocalizedName(PracticeMod.MOD_ID+"."+name);
+        item.setRegistryName(PracticeMod.MOD_ID + ":" + name);
+        item.setUnlocalizedName(PracticeMod.MOD_ID + "." + name);
 
         return item;
     }
