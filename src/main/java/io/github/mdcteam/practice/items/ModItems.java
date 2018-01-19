@@ -5,6 +5,7 @@ import io.github.mdcteam.practice.blocks.ModBlocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -20,6 +21,7 @@ public class ModItems {
     public static final List<Item> MOD_ITEMS = new ArrayList<>();
 
     public static Set<ItemBasicArmor> practiceArmor;
+    public static Set<ItemBasicArmor> testArmor;
 
     public static <I extends Item> I[] addItems(I[] items) {
         for(I item : items) addItem(item);
@@ -47,7 +49,8 @@ public class ModItems {
     public static void init() {
         addItem(new Item(), "practice_item");
 
-        practiceArmor = addItems(ItemBasicArmor.createArmorSet("practice", 1000, new int[]{1000, 1000, 1000, 1000}, 1000, 1000f, SoundEvents.ITEM_ARMOR_EQUIP_IRON, EntityEquipmentSlot.HEAD, EntityEquipmentSlot.CHEST, EntityEquipmentSlot.LEGS, EntityEquipmentSlot.FEET));
+        practiceArmor = addItems(ItemBasicArmor.createArmorSet("practice", 1000, new int[]{1000, 1000, 1000, 1000}, 1000, 1000f, SoundEvents.ITEM_ARMOR_EQUIP_IRON, ItemBasicArmor.class));
+        testArmor = addItems(ItemBasicArmor.createArmorSet("test", ItemArmor.ArmorMaterial.IRON, ItemTestArmor.class, EntityEquipmentSlot.HEAD));
     }
 
     public static Item[] getItems() {
