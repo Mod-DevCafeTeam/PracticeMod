@@ -3,10 +3,11 @@ package io.github.mdcteam.practice.util.objects;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class JsonModelObj {
 
-    public TexturesObj textures;
+    public HashMap<String, String> textures;
     public ArrayList<ModelElementObj> elements;
 
     public static class ModelElementObj {
@@ -14,35 +15,13 @@ public class JsonModelObj {
         public float[] from;
         public float[] to;
 
-        public ElementFacesObj faces;
+        public HashMap<String, ElementFaceObj> faces;
 
-        private class ElementFacesObj {
-            public ElementFaceObj north;
-            public ElementFaceObj east;
-            public ElementFaceObj south;
-            public ElementFaceObj west;
-            public ElementFaceObj up;
-            public ElementFaceObj down;
-
-            private class ElementFaceObj {
-                public String texture;
-                public float[] uv;
-                public float rotation;
-            }
+        public class ElementFaceObj {
+            public String texture;
+            public float[] uv;
+            public float rotation = 0;
         }
     }
 
-    private class TexturesObj {
-
-        @SerializedName("0")
-        public String zero;
-        @SerializedName("1")
-        public String one;
-        @SerializedName("2")
-        public String two;
-        @SerializedName("3")
-        public String three;
-
-        public String particle;
-    }
 }

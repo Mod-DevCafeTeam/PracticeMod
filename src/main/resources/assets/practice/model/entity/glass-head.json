@@ -1,0 +1,21 @@
+{
+	"credit": "Made with Blockbench, a free, modern block model editor by JannisX11",
+	"textures": {"0": "blocks/glass"},
+	"elements": [
+		{
+			"name": "cube",
+			"from": [1, 0, 1],
+			"to": [15, 15, 15],
+			"faces": {
+				"north": {"uv": [1, 0, 15, 16], "texture": "#0"},
+				"east": {"uv": [1, 0, 15, 16], "texture": "#0"},
+				"south": {"uv": [1, 0, 15, 16], "texture": "#0"},
+				"west": {"uv": [1, 0, 15, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 14, 14], "texture": "#0"}
+			},
+			"type": "cube"
+		}
+	],
+	"display": {}
+}

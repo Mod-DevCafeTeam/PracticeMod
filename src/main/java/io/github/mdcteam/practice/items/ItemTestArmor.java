@@ -17,12 +17,11 @@ import javax.annotation.Nullable;
 
 public class ItemTestArmor extends ItemBasicArmor {
 
-    public static final ModelBiped modelChest = new JsonModelBiped(1.0f, new ResourceLocation(PracticeMod.MOD_ID, "entity/test"));
-    public static final ModelBiped model = new JsonModelBiped(0.5f, new ResourceLocation(PracticeMod.MOD_ID, "entity/test"));
+    public static final ModelBiped modelChest = new JsonModelBiped(1.0f, new ResourceLocation(PracticeMod.MOD_ID, "entity/glass-head"));
+    public static final ModelBiped model = new JsonModelBiped(0.5f, new ResourceLocation(PracticeMod.MOD_ID, "entity/glass-head"));
 
-    public ItemTestArmor(String name, int durability, int[] reductions, int enchantability, float toughness, EntityEquipmentSlot equipmentSlot, SoundEvent equipSound) {
-        super(name, durability, reductions, enchantability, toughness, equipmentSlot, equipSound);
-    }
+    public static final ModelBiped modelChest2 = new JsonModelBiped(1.0f, new ResourceLocation(PracticeMod.MOD_ID, "entity/test"));
+    public static final ModelBiped model2 = new JsonModelBiped(0.5f, new ResourceLocation(PracticeMod.MOD_ID, "entity/test"));
 
     public ItemTestArmor(ArmorMaterial material, EntityEquipmentSlot slot) {
         super(material, slot);
@@ -39,12 +38,12 @@ public class ItemTestArmor extends ItemBasicArmor {
             switch (((ItemArmor) itemStack.getItem()).armorType) {
                 case HEAD:
                 case LEGS:
-                    armorModel = model;
+                    armorModel = model2;
                     break;
 
                 case FEET:
                 case CHEST:
-                    armorModel = modelChest;
+                    armorModel = modelChest2;
                     break;
 
                 default:
